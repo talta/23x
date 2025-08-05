@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Three Times - Grow Your Business 2-3x</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #ff6b6b;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .profile-image {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: #666;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+        }
+
+        .services h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+
+        .service-card p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .service-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .service-card li {
+            color: #666;
+            margin-bottom: 0.5rem;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        .service-card li:before {
+            content: "✓";
+            color: #4CAF50;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Experience Section */
+        .experience {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .experience h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        .experience-item {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .experience-item h3 {
+            color: #667eea;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-item .company {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        /* Image Section */
+        .image-section {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .chicago-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .chicago-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .contact h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: #ff6b6b;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .social-links {
+            margin: 1rem 0;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: opacity 0.3s;
+        }
+
+        .social-links a:hover {
+            opacity: 0.7;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .chicago-images {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Logo styling */
+        .logo-23x {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 900;
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo logo-23x">23x</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Grow Your Business 2-3x</h1>
+            <p>Transform your ecommerce potential with expert partnerships, exclusive brand deals, and proven growth strategies</p>
+            <a href="#contact" class="cta-button">Let's Grow Together</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b0e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Mirjana Odeh" class="profile-image">
+                </div>
+                <div class="about-text">
+                    <h2>Meet Mirjana Odeh</h2>
+                    <p>Dynamic and entrepreneurial SaaS sales leader with a proven record of driving exponential growth in startup environments. I specialize in building outbound sales engines from the ground up, closing complex B2B deals, and contributing to product development through user feedback and testing.</p>
+                    <p>Known for wearing multiple hats: sales, customer success, product QA, and systems building while consistently outperforming quota. I thrive in high-growth, mission-driven companies where speed, impact, and ownership matter.</p>
+                    <p>With <strong>Two Three Times</strong>, I bring this expertise to help your ecommerce business achieve 2-3x growth through strategic partnerships, exclusive brand deals, and proven marketing strategies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Brand Exclusive Deals</h3>
+                    <p>Unlock exclusive partnerships with top ecommerce brands to maximize your growth opportunities.</p>
+                    <ul>
+                        <li>Collaborative brand partnerships</li>
+                        <li>Exclusive distribution agreements</li>
+                        <li>Revenue-sharing opportunities</li>
+                        <li>Brand-direct exclusive contracts</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>Strategic Partnerships</h3>
+                    <p>Connect with suppliers, distributors, and brands to expand your market reach and capabilities.</p>
+                    <ul>
+                        <li>Supplier relationship management</li>
+                        <li>Distribution network expansion</li>
+                        <li>Brand partnership facilitation</li>
+                        <li>Strategic alliance development</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>SEO Marketing</h3>
+                    <p>Leverage AI-powered SEO strategies based on proven experience with AutoMato AI.</p>
+                    <ul>
+                        <li>AI SEO listing optimization</li>
+                        <li>Keyword strategy development</li>
+                        <li>Content marketing automation</li>
+                        <li>Performance analytics</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>Digital Edge Advisory</h3>
+                    <p>Professional advisory services through Digital Edge Advisors for comprehensive business growth.</p>
+                    <ul>
+                        <li>Business strategy consulting</li>
+                        <li>Digital transformation guidance</li>
+                        <li>Growth planning and execution</li>
+                        <li>Market analysis and positioning</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>Marketplace Management</h3>
+                    <p>Expert management of your Walmart and Amazon seller accounts for maximum visibility and sales.</p>
+                    <ul>
+                        <li>Walmart Seller Account setup</li>
+                        <li>Amazon Seller Account optimization</li>
+                        <li>Inventory management</li>
+                        <li>Performance monitoring</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>Fulfillment Solutions</h3>
+                    <p>Connect with trusted fulfillment partners to streamline your operations and reduce costs.</p>
+                    <ul>
+                        <li>Warehouse partnership referrals</li>
+                        <li>Fulfillment network optimization</li>
+                        <li>Logistics cost reduction</li>
+                        <li>Supply chain efficiency</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience" id="experience">
+        <div class="container">
+            <h2>Professional Experience</h2>
+            
+            <div class="experience-item">
+                <h3>Founding Account Executive</h3>
+                <div class="company">Automato AI | Remote | Nov 2023 – July 2025</div>
+                <p>Promoted internally after standout performance as Founding SDR; led full sales cycle for mid-market ecommerce tech clients. Exceeded quota by 120%+ by delivering tailored demos and ROI-driven pitches that addressed client-specific workflows.</p>
+            </div>
+
+            <div class="experience-item">
+                <h3>Founding Sales Development Representative</h3>
+                <div class="company">Automato AI | Remote | July 2023 – Nov 2023</div>
+                <p>Built the outbound sales motion from scratch at a 4 person ecommerce AI startup; generated $500K+ in qualified pipeline in 4 months. Used Apollo, LinkedIn Sales Navigator, and HubSpot to execute multichannel outreach campaigns.</p>
+            </div>
+
+            <div class="experience-item">
+                <h3>Team Lead – Mass Torts Division</h3>
+                <div class="company">Bridge Legal (via Rippling) | Hybrid | 2021 – 2023</div>
+                <p>Led intake operations at a legal tech startup using AI-powered claim assessment software. Trained 10+ reps and created SOPs to ensure legal compliance, operational accuracy, and performance benchmarks.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chicago Images Section -->
+    <section class="image-section">
+        <div class="container">
+            <h2>Based in Chicago</h2>
+            <p>Serving clients nationwide from the heart of America's business hub</p>
+            <div class="chicago-images">
+                <img src="https://images.unsplash.com/photo-1494522358652-f30e61a5de2b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Chicago Train" class="chicago-image">
+                <img src="https://images.unsplash.com/photo-1582149842057-299c41e99692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Chicago Rainbow" class="chicago-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Ready to Grow 2-3x?</h2>
+            <form class="contact-form" action="https://formspree.io/f/xkgzqoan" method="POST">
+                <div class="form-group">
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone (Optional)</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Tell me about your business goals</label>
+                    <textarea id="message" name="message" placeholder="What challenges are you facing? What growth targets do you have?"></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Start Growing Today</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="#" target="_blank">LinkedIn</a>
+                <a href="#" target="_blank">Digital Edge Advisors</a>
+                <a href="#" target="_blank">Walmart Store</a>
+                <a href="#" target="_blank">Amazon Store</a>
+            </div>
+            <p>&copy; 2025 Two Three Times. All rights reserved.</p>
+            <p>Design: <a href="https://html5up.net" style="color: #ccc;">HTML5 UP</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header background opacity on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'linear-gradient(135deg, rgba(102, 126, 234, 0.95) 0%, rgba(118, 75, 162, 0.95) 100%)';
+            } else {
+                header.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+            }
+        });
+
+        // Form submission handling
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            const submitBtn = document.querySelector('.submit-btn');
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            // Re-enable button after 3 seconds (Formspree will handle the actual submission)
+            setTimeout(() => {
+                submitBtn.textContent = 'Start Growing Today';
+                submitBtn.disabled = false;
+            }, 3000);
+        });
+
+        // Add animation on scroll for service cards
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe service cards for animation
+        document.querySelectorAll('.service-card, .experience-item').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
